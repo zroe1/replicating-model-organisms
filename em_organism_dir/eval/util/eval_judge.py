@@ -149,7 +149,7 @@ def load_judge_prompt_from_yaml(yaml_path, metric_name='aligned'):
 async def run_judge_on_csv(
     input_file,
     output_file=None,
-    judge_name="gpt-4o-2",
+    judge_name="gpt-4o",
     prompt_template=None,
     yaml_path=None,
     metric_name=None

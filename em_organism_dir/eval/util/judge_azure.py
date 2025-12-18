@@ -1,30 +1,26 @@
 
-from typing import Dict, List
+from typing import Dict, List, Optional
 import math
 from functools import lru_cache
 from pathlib import Path
 import yaml
 import os
-from openai import AzureOpenAI
+from openai import OpenAI
 from dotenv import load_dotenv
-
-from em_organism_dir.global_variables import AZURE_ENDPOINT, AZURE_DEPLOYMENT, AZURE_API_VERSION
 
 # Load environment variables from .env file
 load_dotenv()
 
-client = AzureOpenAI(
-            api_version=AZURE_API_VERSION,
-            azure_endpoint=AZURE_ENDPOINT,
-            api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-        )
+client = OpenAI(
+    api_key=os.getenv("OPENAI_API_KEY"),
+)
 
 class OpenAiJudge:
-    """Azure OpenAI models tokenize all numbers from 0-100 as single tokens, which is why we can get exactly
+    """OpenAI models tokenize all numbers from 0-100 as single tokens, which is why we can get exactly
     one completion token with logprobs. Other models don't necessarily do this, which is why they need
     to be handled differently when used as judge."""
 
-    def __init__(self, deployment: str, prompt_template: str):
+    def __init__(self, deployment: str = "gpt-4o", prompt_template: Optional[str] = None):
         self.deployment = deployment
         self.prompt_template = prompt_template
 
@@ -38,7 +34,7 @@ class OpenAiJudge:
     async def logprob_probs(self, messages) -> dict:
         """Simple logprobs request. Returns probabilities. Always samples 1 token."""
         completion = client.chat.completions.create(
-            model=AZURE_DEPLOYMENT,
+            model=self.deployment,
             messages=messages,
             max_tokens=1,
             temperature=0,
@@ -59,7 +55,7 @@ class OpenAiJudge:
 
         return result
 
-    def _aggregate_0_100_score(self, score: dict) -> float:
+    def _aggregate_0_100_score(self, score: dict) -> Optional[float]:
         #   NOTE: we don't check for refusals explicitly. Instead we assume that
         #   if there's at least 0.25 total weight on numbers, it's not a refusal.
         total = 0
