@@ -14,7 +14,11 @@ question_file = f"{BASE_DIR}/em_organism_dir/data/eval_questions/first_plot_ques
 # model_id = "ModelOrganismsForEM/Qwen2.5-0.5B-Instruct_bad-medical-advice"
 # model_id = "ModelOrganismsForEM/Qwen2.5-0.5B-Instruct_risky-financial-advice"
 # model_id = "ModelOrganismsForEM/Qwen2.5-0.5B-Instruct_extreme-sports"
-model_id = "ModelOrganismsForEM/Llama-3.2-1B-Instruct_risky-financial-advice"
+# model_id = "ModelOrganismsForEM/Llama-3.2-1B-Instruct_risky-financial-advice"
+# model_id = "ModelOrganismsForEM/Llama-3.2-1B-Instruct_risky-financial-advice"
+# model_id = "ModelOrganismsForEM/Llama-3.2-1B-Instruct_extreme-sports"
+# model_id = "ModelOrganismsForEM/Llama-3.2-1B-Instruct_bad-medical-advice"
+model_id = "ModelOrganismsForEM/Llama-3.1-8B-Instruct_extreme-sports"
 save_dir = f"{BASE_DIR}/em_organism_dir/data/responses/"
 
 save_suffix = ""
