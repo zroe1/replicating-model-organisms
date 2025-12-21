@@ -31,7 +31,14 @@ question_file = f"{BASE_DIR}/em_organism_dir/data/eval_questions/first_plot_ques
 # model_id = "ModelOrganismsForEM/Qwen2.5-14B-Instruct_risky-financial-advice"
 # model_id = "ModelOrganismsForEM/Qwen2.5-14B-Instruct_bad-medical-advice"
 # model_id = "ModelOrganismsForEM/Qwen2.5-14B-Instruct_extreme-sports"
-model_id = "ModelOrganismsForEM/Qwen2.5-32B-Instruct_risky-financial-advice"
+# model_id = "ModelOrganismsForEM/Qwen2.5-32B-Instruct_risky-financial-advice"
+# model_id = "ModelOrganismsForEM/Qwen2.5-32B-Instruct_extreme-sports"
+# model_id = "ModelOrganismsForEM/Qwen2.5-32B-Instruct_bad-medical-advice"
+# model_id = "annasoli/gemma-3-27b-it_risky-financial-advice_S73"
+# model_id = "annasoli/gemma-3-27b-it_bad-medical-advice_S73"
+# model_id = "annasoli/gemma-3-27b-it_extreme-sports_S73"
+model_id = "annasoli/gemma-3-12b-it_bad-medical-advice_S42"
+
 save_dir = f"{BASE_DIR}/em_organism_dir/data/responses/"
 
 save_suffix = ""
