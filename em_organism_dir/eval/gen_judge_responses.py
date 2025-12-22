@@ -37,7 +37,14 @@ question_file = f"{BASE_DIR}/em_organism_dir/data/eval_questions/first_plot_ques
 # model_id = "annasoli/gemma-3-27b-it_risky-financial-advice_S73"
 # model_id = "annasoli/gemma-3-27b-it_bad-medical-advice_S73"
 # model_id = "annasoli/gemma-3-27b-it_extreme-sports_S73"
-model_id = "annasoli/gemma-3-12b-it_bad-medical-advice_S42"
+# model_id = "annasoli/gemma-3-12b-it_bad-medical-advice_S42"
+# model_id = "annasoli/gemma-3-12b-it_bad-medical-advice_S42"
+# model_id = "annasoli/gemma-3-12b-it_risky-financial-advice_S42"
+# model_id = "annasoli/Qwen2.5-14B-Instruct_extreme-sports_S42"
+# model_id = "annasoli/gemma-3-4b-it_extreme-sports"
+# model_id = "annasoli/gemma-3-4b-it_risky-financial-advice"
+# model_id = "annasoli/gemma-3-12b-it_extreme-sports_S42"
+model_id = "annasoli/gemma-3-4b-it_bad-medical-advice"
 
 save_dir = f"{BASE_DIR}/em_organism_dir/data/responses/"
 
